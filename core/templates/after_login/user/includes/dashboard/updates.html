@@ -1,0 +1,44 @@
+
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Updates</h4>
+            <p class="category">Updates regarding plans and renewal and upgrade offers. </p>
+        </div>
+        <div class="content">
+            {% for update in updates_list %}
+                {% if request.user == update.update_for %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="alert alert-success">
+                                <button type="button" aria-hidden="true" class="close">×</button>
+                                <span><b> {{ update.title }} - </b>{{ update.details }}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <!-- <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="alert alert-success">
+                        <button type="button" aria-hidden="true" class="close">×</button>
+                        <span><b> Update - </b>leniti itaque laborum sed libero officiis illo, molestias suscipit.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" data-notify="container">
+                        <button type="button" aria-hidden="true" class="close">×</button>
+                        <span><b>Nutrition Fact! - </b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nisi consequuntur tenetur, repellendus pariatur corporis ullam! Iste accusantium expedita alias, ipsa animi nemo voluptatum enim blanditiis magni eius et sapiente.</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="footer">
+                <hr>
+                <div class="stats">
+                    <i class="ti-reload"></i> Updated 3 minutes ago
+                </div>
+            </div>
+        </div>
+    </div>

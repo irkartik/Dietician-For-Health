@@ -1,0 +1,66 @@
+{% extends 'after_login/base.html' %}
+
+{% block pagetitle %}
+    User Login
+{% endblock %}
+
+{% block style %}
+<style>
+    body, html{
+        height: 100%;
+        background-color: #f4f3ef;
+    }
+    .poora{
+        height: 100%;
+    }
+    
+    .bichmein{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block body %}
+
+<div class="content poora">
+    <div class="container-fluid poora">
+        <div class="row poora">
+                    <div class="col-md-4 bichmein">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title text-center">Users Module | Sign In</h4>
+                                <hr>
+                            </div>
+                            <div class="content">
+                                    {% if error_message %}
+                                        <p><strong>{{ error_message }}</strong></p>
+                                    {% endif %}
+                                    <form action="{% url 'core:session_login' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="username">Username: </label>
+                                            <input type="text" name='username' placeholder="Username" class="form-control border-input"/>
+                                            <label for="password">Password: </label>
+                                            <input type="password" name='password' placeholder="Password" class="form-control border-input"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-fill btn-success">Login</button>
+                                    </form>
+                            <div class="footer">
+                                    <hr>
+                                    <div class="stats">
+                                        <!-- <p>New User? <a href="{% url 'core:user_signup' %}">Sign Up</a></p> -->
+                                        <p>Forgotton Password? <a href="#">Click here</a></p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

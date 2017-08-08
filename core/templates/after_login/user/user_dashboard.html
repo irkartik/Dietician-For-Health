@@ -1,0 +1,50 @@
+ {% extends 'after_login/base.html' %}
+
+{% block pagetitle %}
+    Dashboard
+{% endblock %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                {% include 'after_login/user/includes/dashboard/milestones.html' %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                {% include 'after_login/user/includes/dashboard/updates.html' %}
+
+                {% include 'after_login/user/includes/dashboard/interact.html' %}
+            </div>
+
+            <div class="col-md-6">
+                {% include 'after_login/user/includes/dashboard/notifications.html' %}
+            </div>
+        </div>
+        
+</div>
+{% endblock %}
+
+{% block script %}
+            <script type="text/javascript">
+        $(document).ready(function(){
+
+            demo.initChartist();
+
+            $.notify({
+                message: "Congratulations, You have been logged in!"
+
+            },{
+                type: 'success',
+                timer: 4000
+            });
+
+        });
+    </script>
+{% endblock %}

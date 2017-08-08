@@ -1,0 +1,11 @@
+{% load static %}
+            <div class="video-area overlay-video bg-common-style" style="background-image: url({% static 'home/images/video intro/1.jpg' %});">
+                <div class="container">
+                    <div class="video-content">
+                        <h2 class="video-title">Watch Our Video</h2>
+						{% for video in video_list %}
+	                        <a class="play-btn popup-youtube wow " data-wow-duration="2s" data-wow-delay=".1s" href="{{ video.url }}"><i class="fa fa-play" aria-hidden="true"></i></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>

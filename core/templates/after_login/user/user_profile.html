@@ -1,0 +1,25 @@
+ {% extends 'after_login/base.html' %}
+
+{% block pagetitle %}
+    Profile
+{% endblock %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block content %}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5">
+                            {% include 'core/user/includes/profile/user.html' %}
+                            {% include 'core/user/includes/profile/dieticians.html' %}
+                    </div>
+                    <div class="col-lg-8 col-md-7">
+                            {% include 'core/user/includes/profile/edit.html' %}
+                    </div>
+
+
+                </div>
+            </div>
+{% endblock %}

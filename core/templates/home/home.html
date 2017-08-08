@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}                
+
+{% load static %}
+
+{% block title %}
+      Homepage
+{% endblock %}
+
+{% block advertisement %}
+    {% for ad in ad_list %}
+      <a href="{{ ad.url }}">{{ ad.ad_text }}</a>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+      <!-- start header section -->
+                  {% include 'home/includes/header-package.html' %}
+      <!-- End Header Section -->
+
+            <!-- Content Section -->
+                <section class="content">
+                  <!-- Search Bar -->
+                              {% include 'home/includes/search.html' %}
+
+                  <!-- About Section -->
+                              {% include 'home/includes/about.html' %}
+
+                  <!-- Intro Video Section -->
+                              {% include 'home/includes/video.html' %}
+                  <!-- End Intro Video Section -->
+
+                  <!-- ============== select program block starts ============== -->
+                              {% include 'home/includes/select-program.html' %}
+                  <!-- ============== select program block ends ============== -->
+
+                  <!-- CLIENT TESTIMONIALS -->
+                              {% include 'home/includes/testimonials.html' %}
+                  <!-- End CLIENT Testimonials -->
+                </section>
+          <!-- End Content Secion -->
+{% endblock %}
+
+{% block social_networking %}
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/1.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/2.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/3.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/4.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/5.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/6.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/7.png' %});"></li>
+      <li class="social-icon" style="background-image:url({% static 'home/images/social/8.png' %});"></li>
+{% endblock %}

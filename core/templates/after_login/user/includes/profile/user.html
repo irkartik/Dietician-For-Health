@@ -1,0 +1,41 @@
+
+{% load static %}
+
+{% block style %}
+    <style>
+        .description{
+            word-wrap: break-word;
+        }
+    </style>
+{% endblock %}
+
+<div class="card card-user">
+    <div class="image">
+        <img src="{% static 'core/img/background.jpg' %}" alt="..."/>
+    </div>
+    <div class="content">
+        <div class="author">
+          <img class="avatar border-white" src="{% static 'core/img/faces/face-2.jpg' %}" alt="..."/>
+          <h4 class="title">Raju Jha<br />
+             <a href="#"><small>@{{ user.username }}</small></a>
+          </h4>
+        </div>
+        <p class="description text-center">
+            "{{ user.description }}"
+        </p>
+    </div>
+    <hr>
+    <div class="text-center">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <h5>12<br /><small>Subscriptions</small></h5>
+            </div>
+            <div class="col-md-4">
+                <h5>3<br /><small>Connections</small></h5>
+            </div>
+            <div class="col-md-3">
+                <h5>3/5<br /><small>Health Points</small></h5>
+            </div>
+        </div>
+    </div>
+</div>

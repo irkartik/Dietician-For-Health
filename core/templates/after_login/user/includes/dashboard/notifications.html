@@ -1,0 +1,47 @@
+
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Notifications</h4>
+            <p class="category">Notifications regarding Diet plans, Nutrition facts from the dietician </p>
+        </div>
+            <div class="content">
+            {% for notification in notification_list %}
+                {% if request.user == notification.notification_for %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="alert alert-info">
+                                <button type="button" aria-hidden="true" class="close">×</button>
+                                <span><b> {{ notification.title }} </b>{{ notification.details }}</span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+           <!--  <div class="row">
+               <div class="col-lg-12 col-md-12">
+                   <div class="alert alert-info">
+                       <button type="button" aria-hidden="true" class="close">×</button>
+                       <span><b> Diet Plan - </b>leniti itaque laborum sed libero officiis illo, molestias suscipit.</span>
+                   </div>
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="alert alert-info" data-notify="container">
+                       <button type="button" aria-hidden="true" class="close">×</button>
+                       <span><b>Nutrition Fact! - </b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nisi consequuntur tenetur, repellendus pariatur corporis ullam! Iste accusantium expedita alias, ipsa animi nemo voluptatum enim blanditiis magni eius et sapiente.</span>
+                   </div>
+               </div>
+           </div> -->
+        </div>
+        <div class="content">
+            
+            <div class="footer">
+                
+                <hr>
+                <div class="stats">
+                    <i class="ti-reload"></i> Updated 3 minutes ago
+                </div>
+            </div>
+        </div>
+    </div>
