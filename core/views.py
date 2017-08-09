@@ -12,10 +12,12 @@ def homeview(request):
 	testimonial_list = Testimonial.objects.all()
 	video_list = Video.objects.all()
 	ad_list = TopAdBar.objects.order_by('order')
+	banner_list = Banner.objects.order_by('order')
 	context = {
 		'testimonial_list' : testimonial_list,
 		'video_list': video_list,
-		'ad_list': ad_list}
+		'ad_list': ad_list,
+		'banner_list': banner_list}
 	return render(request, "home/home.html", context)
 
 def user_signup(request):

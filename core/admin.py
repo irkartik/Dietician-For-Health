@@ -68,12 +68,24 @@ class TopAdBarAdmin(admin.ModelAdmin):
 
 class SocialNetworkAdmin(admin.ModelAdmin):
     list_display= ['order', 'social_platform', 'url']
-    readonly_fields=('order',)
+    readonly_fields=('order', 'img',)
     list_editable = ['url']
     ordering = ('order',)
 
     actions = None
 
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+class BannerAdmin(admin.ModelAdmin):
+    list_display=['banner_name','order','package1_name', 'package2_name', 'package3_name', 'package4_name']
+    readonly_fields = ('banner_class', 'package1_id', 'package2_id', 'package3_id', 'package4_id', 'order',)
+    ordering=('order',)
+    exclude = ('banner_class',)
+    
     def has_add_permission(self, request):
         return False
 
@@ -89,5 +101,6 @@ admin.site.register(Testimonial, TestimonialAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(TopAdBar, TopAdBarAdmin)
 admin.site.register(SocialNetwork, SocialNetworkAdmin)
+admin.site.register(Banner, BannerAdmin)
 
 admin.site.unregister(Group)

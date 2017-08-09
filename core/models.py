@@ -90,6 +90,7 @@ class SocialNetwork(models.Model):
     social_platform = models.CharField(max_length=100)
     url = models.CharField(max_length=1000)
     order = models.PositiveIntegerField()
+    img = models.FileField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Social Network'
@@ -97,3 +98,40 @@ class SocialNetwork(models.Model):
 
     def __str__(self):
         return self.social_platform
+
+
+class Banner(models.Model):
+    banner_name = models.CharField(max_length = 1000)
+
+    banner_class = models.CharField(max_length=100, blank=True, null = True)
+
+    package1_id = models.CharField(max_length=100, verbose_name="Technical stuff (to be used by developers", null = True, blank=True)
+    package1_name = models.CharField(max_length=1000)
+    package1_url = models.CharField(max_length=10000, blank=True, null=True)
+    package1_img = models.FileField()
+
+    package2_id = models.CharField(max_length=100, verbose_name="Technical stuff (to be used by developers", null = True, blank=True)
+    package2_name = models.CharField(max_length=1000)
+    package2_url = models.CharField(max_length=10000, blank=True, null=True)
+    package2_img = models.FileField()
+
+    package3_id = models.CharField(max_length=100, verbose_name="Technical stuff (to be used by developers", null = True, blank=True)
+    package3_name = models.CharField(max_length=1000)
+    package3_url = models.CharField(max_length=10000, blank=True, null=True)    
+    package3_img = models.FileField()
+
+    package4_id = models.CharField(max_length=100, verbose_name="Technical stuff (to be used by developers", null = True, blank=True)
+    package4_name = models.CharField(max_length=1000)
+    package4_url = models.CharField(max_length=10000, blank=True, null=True)    
+    package4_img = models.FileField()
+
+    banner_tagline = models.CharField(max_length=1000)
+
+    order = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name = "Banner Package"
+        verbose_name_plural = "Banner Packages"
+
+    def __str__(self):
+        return self.banner_name
